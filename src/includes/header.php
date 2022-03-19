@@ -10,9 +10,15 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="index.php">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="todoPage.php">Todo</a>
-          </li>
+          <?php 
+            if (isset($_SESSION['userName'])) {
+              echo '
+              <li class="nav-item">
+                <a class="nav-link" href="todoPage.php">Todo</a>
+              </li>
+              ';
+            }
+          ?>
         </ul>
         <?php
         if (isset($_COOKIE['userName'])) {
