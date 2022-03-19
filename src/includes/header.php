@@ -14,7 +14,7 @@
             if (isset($_SESSION['userName'])) {
               echo '
               <li class="nav-item">
-                <a class="nav-link" href="todoPage.php">Todo</a>
+                <a class="nav-link text-info" href="todoPage.php">Todo</a>
               </li>
               ';
             }
