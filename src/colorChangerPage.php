@@ -11,7 +11,7 @@ include('./includes/head.php');
     <div class="row">
       <div class="col-6">
         <form action="./colorChanger/changeBackgroundColor.php" method="POST">
-          <label for="bgColor">Pick a color</label>
+          <label for="bgColor" class="text-warning">Pick a color</label>
           <?php
           if (isset($_COOKIE['bgColor']) && !isset($_SESSION['bgColor'])) {
             echo '<input type="color" name="bgColor" id="bgColor" class="form-control" value="' . $_COOKIE['bgColor'] . '">';
@@ -25,7 +25,7 @@ include('./includes/head.php');
       </div>
       <div class="col-6">
         <form action="./colorChanger/changeBackgroundColor.php" method="POST">
-          <label for="bgColor">Pick a color</label>
+          <label for="bgColor" class="text-info">Pick a color</label>
           <?php
           if (!isset($_COOKIE['bgColor']) && isset($_SESSION['bgColor'])) {
             echo '<input type="color" name="bgColor" id="bgColor" class="form-control" value="'.$_SESSION['bgColor'].'">';
