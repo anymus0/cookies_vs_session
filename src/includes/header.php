@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.php">Navbar</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,17 +10,22 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="index.php">Home</a>
           </li>
-          <?php 
-            if (isset($_SESSION['userName'])) {
-              echo '
+          <?php
+          // nav links available only for logged-in users
+          if (isset($_SESSION['userName'])) {
+            echo '
               <li class="nav-item">
                 <a class="nav-link text-info" href="todoPage.php">Todo</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link text-info" href="colorChangerPage.php">Color Changer</a>
+              </li>
               ';
-            }
+          }
           ?>
         </ul>
         <?php
+        // remember userName
         if (isset($_COOKIE['userName'])) {
           $userNameFromCookie = $_COOKIE['userName'];
           $checkRemember = true;
